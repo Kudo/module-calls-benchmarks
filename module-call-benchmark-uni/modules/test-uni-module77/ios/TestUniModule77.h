@@ -1,7 +1,12 @@
 #pragma once
 
 #import <ExpoModulesCore/EXExportedModule.h>
+#import <React/RCTBridgeModule.h>
 
-@interface EXTestUniModule77 : EXExportedModule
+@interface EXTestUniModule77 : EXExportedModule <RCTBridgeModule>
+
+@end
+
+@protocol EXTestUniModule77Protocol <NSObject>
 
 @end
