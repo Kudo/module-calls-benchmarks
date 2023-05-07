@@ -58,12 +58,12 @@ EX_EXPORT_METHOD_AS(queryTtiDurationAsync, queryTtiDurationAsync:(EXPromiseResol
 
 ```jsx
 async function loopCallsAsync() {
-  const start = Date.now();
+  const start = performance.now();
   for (let i = 0; i < 1000; i++) {
     await queryTtiDurationAsync();
   }
-  const end = Date.now();
-  setNativeCallTime(end - start);
+  const end = performance.now();
+  setNativeCallTime((end - start).toFixed(2));
 }
 ```
 
