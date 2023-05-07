@@ -17,6 +17,7 @@ These are benchmark apps for different React Native native module systems:
 
 > **Note**
 > All measured on Release build + New Architecture mode enabled
+> The TTI and Native call time results are from average of six-time testing.
 
 ### How we measure TTI
 
@@ -47,14 +48,10 @@ For Legacy Expo Module:
 ```objc
 EX_EXPORT_METHOD_AS(queryTtiDurationAsync, queryTtiDurationAsync:(EXPromiseResolveBlock)resolve rejecter:(EXPromiseRejectBlock)reject)
 {
-  UIViewController *rootViewController = UIApplication.sharedApplication.delegate.window.rootViewController;
-  RCTRootView *rootView = (RCTRootView *)rootViewController.view;
-  RCTPerformanceLogger *perfLogger = rootView.bridge.performanceLogger;
+  RCTPerformanceLogger *perfLogger = _bridge.performanceLogger;
   resolve(@([perfLogger durationForTag:RCTPLTTI]));
 }
 ```
-
-For Legacy Expo Module, we don't have a better way to get the `RCTBridge` but only through rootViewController. It could be slower a little bit.
 
 ### How we measure native call time
 
