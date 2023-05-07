@@ -19,6 +19,7 @@ These are benchmark apps for different React Native native module systems:
 
 - All measured on Release build + New Architecture mode enabled
 - The TTI and Native call time results are from average of six-time testing.
+- To emphasize the lazy loading difference between native module systems, in each app we created one hundred native modules but only call into the first module. That could demonstrate that unused native modules will not increase startup time. 
 
 ### How we measure TTI
 
