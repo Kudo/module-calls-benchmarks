@@ -6,15 +6,15 @@ import { queryTtiDurationAsync } from "test-turbo-module1";
 
 export default function App() {
   const [ttiTime, setTtiTime] = useState(0);
-  const [nativeCallTime, setNativeCallTime] = useState(0);
+  const [nativeCallTime, setNativeCallTime] = useState("");
 
   async function loopCallsAsync() {
-    const start = Date.now();
+    const start = performance.now();
     for (let i = 0; i < 1000; i++) {
       await queryTtiDurationAsync();
     }
-    const end = Date.now();
-    setNativeCallTime(end - start);
+    const end = performance.now();
+    setNativeCallTime((end - start).toFixed(2));
   }
 
   async function setupAsync() {

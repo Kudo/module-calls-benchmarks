@@ -13,7 +13,7 @@ These are benchmark apps for different React Native native module systems:
 | pod install                 | 11s          | 31s           | 10s                 | MacBook Pro M1 |
 | xcodebuild                  | 180s         | 237s          | 170s                | MacBook Pro M1 |
 | TTI                         | 4ms          | 3.6ms         | 4ms                 | iPhone 11      |
-| Native calls for 1000 times | 44ms         | 46.3ms        | 79ms                | iPhone 11      |
+| Native calls for 1000 times | 43.1ms       | 45.7ms        | 79.7ms              | iPhone 11      |
 
 > **Note**
 > All measured on Release build + New Architecture mode enabled
@@ -56,18 +56,17 @@ EX_EXPORT_METHOD_AS(queryTtiDurationAsync, queryTtiDurationAsync:(EXPromiseResol
 
 For Legacy Expo Module, we don't have a better way to get the `RCTBridge` but only through rootViewController. It could be slower a little bit.
 
-
 ### How we measure native call time
 
 ```jsx
-  async function loopCallsAsync() {
-    const start = Date.now();
-    for (let i = 0; i < 1000; i++) {
-      await queryTtiDurationAsync();
-    }
-    const end = Date.now();
-    setNativeCallTime(end - start);
+async function loopCallsAsync() {
+  const start = Date.now();
+  for (let i = 0; i < 1000; i++) {
+    await queryTtiDurationAsync();
   }
+  const end = Date.now();
+  setNativeCallTime(end - start);
+}
 ```
 
 ## Apps
