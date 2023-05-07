@@ -16,8 +16,9 @@ These are benchmark apps for different React Native native module systems:
 | Native calls for 1000 times | 43.1ms       | 45.7ms        | 79.7ms              | iPhone 11      |
 
 > **Note**
-> All measured on Release build + New Architecture mode enabled
-> The TTI and Native call time results are from average of six-time testing.
+
+- All measured on Release build + New Architecture mode enabled
+- The TTI and Native call time results are from average of six-time testing.
 
 ### How we measure TTI
 
