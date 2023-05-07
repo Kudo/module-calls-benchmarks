@@ -1,0 +1,24 @@
+{
+  "name": "test-turbo-module86",
+  "version": "0.1.0",
+  "description": "test turbo module",
+  "react-native": "index",
+  "repository": "https://github.com/Kudo/module-call-benchmark",
+  "author": "test-turbo-module86 <kudo@expo.dev> (https://github.com/Kudo)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kudo/module-call-benchmark/issues"
+  },
+  "homepage": "https://github.com/Kudo/module-call-benchmark#readme",
+  "devDependencies": {
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "codegenConfig": {
+    "name": "RNTestTurboModule86Spec",
+    "type": "modules",
+    "jsSrcsDir": "src"
+  }
+}
